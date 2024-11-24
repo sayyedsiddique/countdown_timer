@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", serif;
+  font-style: normal;
+}
+
+.countdown_timer_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.countdown_timer_container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.timer_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.btn_container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.btn_container button {
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: medium;
+  font-family: "Poppins", serif;
+  color: white;
+}
+.btn_container .startBtn {
+  background-color: green;
+}
+
+.btn_container .resetBtn {
+  background-color: orangered;
+}
