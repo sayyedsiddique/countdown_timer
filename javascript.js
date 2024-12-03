@@ -31,6 +31,12 @@
 
   function stopInterval() {}
 
+  resetBtnElem.addEventListener("click", (e) => {
+    hoursInput.value = "";
+    minutesInput.value = "";
+    secondInput.value = "";
+  });
+
   function timer() {
     if (
       hoursInput.value == 0 &&
@@ -41,13 +47,25 @@
       minutesInput.value = "";
       secondInput.value = "";
       stopInterval();
-    }else if(secondInput.value != 0){
-        secondInput.value = `${secondInput.value <= 10 ? "0": ""}${secondInput.value - 1}`
-    }else if(minutesInput.value != 0 && secondInput.value == 0){
-        minutesInput.value = `${minutesInput.value <= 10 ? "0": ""}${minutesInput.value - 1}`
-        secondInput.value = `60`
+    } else if (secondInput.value != 0) {
+      secondInput.value = `${secondInput.value <= 10 ? "0" : ""}${
+        secondInput.value - 1
+      }`;
+    } else if (minutesInput.value != 0 && secondInput.value == 0) {
+      minutesInput.value = `${minutesInput.value <= 10 ? "0" : ""}${
+        minutesInput.value - 1
+      }`;
+      secondInput.value = `59`;
+    } else if (
+      hoursInput.value != 0 &&
+      minutesInput.value == 0 &&
+      secondInput.value == 0
+    ) {
+      hoursInput.value = `${hoursInput.value <= 10 ? "0" : ""}${
+        hoursInput.value - 1
+      }`;
+      minutesInput.value = `59`;
+      secondInput.value = `59`;
     }
-
-
   }
 })();
