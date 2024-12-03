@@ -45,12 +45,27 @@ body {
   color: #434343;
 }
 
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input_colon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+}
+
 .btn_container {
   display: flex;
   gap: 20px;
   width: 100%;
 }
-.btn_container button {
+.btn_container .btn {
   width: 50%;
   padding: 10px;
   border-radius: 5px;
@@ -65,7 +80,8 @@ body {
   background-color: green;
 }
 
-.btn_container .stop{
+.btn_container .stopBtn {
+  display: none;
   background-color: rgb(241, 51, 37);
 }
 
