@@ -43,6 +43,9 @@
       stopInterval();
     }else if(secondInput.value != 0){
         secondInput.value = `${secondInput.value <= 10 ? "0": ""}${secondInput.value - 1}`
+    }else if(minutesInput.value != 0 && secondInput.value == 0){
+        minutesInput.value = `${minutesInput.value <= 10 ? "0": ""}${minutesInput.value - 1}`
+        secondInput.value = `60`
     }
 
 
