@@ -29,7 +29,13 @@
     startInterval();
   });
 
-  function stopInterval() {}
+  function stopInterval(state) {
+    startBtnElem.innerHTML = state === "pause" ? "Continue" : "Start";
+
+    startBtnElem.style.display = "initial";
+    stopBtnElem.style.display = "none";
+    clearInterval(countdownTimer);
+  }
 
   resetBtnElem.addEventListener("click", (e) => {
     hoursInput.value = "";
@@ -38,6 +44,17 @@
   });
 
   function timer() {
+    if (secondInput.value > 60) {
+      minutesInput.value++;
+      secondInput.value = parseInt(secondInput.value) - 59;
+    }
+
+    if (minutesInput.value > 60) {
+      hoursInput.value++;
+      minutesInput.value = parseInt(minutesInput.value) - 60;
+      secondInput.value = parseInt(secondInput.value) - 59;
+    }
+
     if (
       hoursInput.value == 0 &&
       minutesInput.value == 0 &&
@@ -68,4 +85,8 @@
       secondInput.value = `59`;
     }
   }
+
+  stopBtnElem.addEventListener("click", () => {
+    stopInterval("pause");
+  });
 })();
